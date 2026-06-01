@@ -554,10 +554,17 @@ body.home-page .main {
 }
 
 .home-hero .heading.h2 {
-  max-width: 15ch;
+  width: max-content;
+  max-width: 100%;
   font-size: 7.2rem;
   line-height: 1.06;
   cursor: default;
+  text-wrap: normal;
+}
+
+.hero-line {
+  display: block;
+  white-space: nowrap;
 }
 
 .hero-word {
@@ -1564,6 +1571,12 @@ body.home-page .main {
     font-size: 5.2rem;
     line-height: 1.08;
     max-width: 12ch;
+    width: auto;
+  }
+
+  .hero-line {
+    display: contents;
+    white-space: normal;
   }
 
   .heading.h4 {
