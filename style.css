@@ -1,9 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&display=swap");
-
 @font-face {
   font-family: "Jetbrains Mono";
-  src: url("https://cdn.prod.website-files.com/68dc970bd6e945ea3fb0f426/68dc9f0578a9a4165ddd5365_JetBrainsMono-Regular.woff2")
-    format("woff2");
+  src: url("fonts/JetBrainsMono-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -11,37 +8,42 @@
 
 @font-face {
   font-family: "Jetbrains Mono";
-  src: url("https://cdn.prod.website-files.com/68dc970bd6e945ea3fb0f426/68dc9f05dc945261aa6f3902_JetBrainsMono-Medium.woff2")
-    format("woff2");
+  src: url("fonts/JetBrainsMono-Medium.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Helvetica Neue";
-  src: url("https://cdn.prod.website-files.com/68dc970bd6e945ea3fb0f426/68dca01244c8d07e51654fb4_HelveticaNeue-Roman.woff2")
-    format("woff2");
+  font-family: "Geist Mono";
+  src: url("fonts/GeistMono-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Helvetica Neue";
-  src: url("https://cdn.prod.website-files.com/68dc970bd6e945ea3fb0f426/68dca0121b8f11f91cc5aee8_HelveticaNeue-Medium.woff2")
-    format("woff2");
+  font-family: "Geist Mono";
+  src: url("fonts/GeistMono-Medium.woff2") format("woff2");
   font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Geist Mono";
+  src: url("fonts/GeistMono-SemiBold.woff2") format("woff2");
+  font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 
 :root {
-  --font-heading: "Helvetica Neue", Arial, sans-serif;
-  --font-body: "Helvetica Neue", Arial, sans-serif;
+  --font-heading: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-body: "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-button: "Jetbrains Mono", monospace;
   --font-footer: "Geist Mono", "Jetbrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
-  --font-model: "Helvetica Neue", Arial, sans-serif;
+  --font-model: "Helvetica Neue", Helvetica, Arial, sans-serif;
   --color-title: #f5f5f7;
   --color-body: rgba(245, 245, 247, 0.88);
   --color-subtitle: rgba(245, 245, 247, 0.58);
