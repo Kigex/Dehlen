@@ -132,6 +132,11 @@ html {
   box-sizing: border-box;
 }
 
+html {
+  min-height: 100%;
+  background: #02090f;
+}
+
 body {
   min-height: 100vh;
   margin: 0;
@@ -195,6 +200,7 @@ body::after {
   display: block;
   width: 100vw;
   height: 100vh;
+  min-height: 100dvh;
   pointer-events: none;
   opacity: 0.92;
   filter: saturate(112%) contrast(104%);
@@ -273,7 +279,7 @@ img {
   z-index: 20;
   position: sticky;
   top: 0;
-  padding-top: 0.9rem;
+  padding-top: max(0.9rem, env(safe-area-inset-top));
   background: transparent;
   border-bottom: 0;
   -webkit-backdrop-filter: none;
@@ -1340,6 +1346,37 @@ body.home-page .main {
 }
 
 @media (max-width: 767px) {
+  html,
+  body {
+    min-height: 100svh;
+    background: #02090f;
+  }
+
+  body {
+    min-height: 100dvh;
+  }
+
+  body.home-page {
+    height: 100dvh;
+    min-height: 100dvh;
+  }
+
+  @supports not (height: 100dvh) {
+    body.home-page {
+      height: -webkit-fill-available;
+      min-height: -webkit-fill-available;
+    }
+  }
+
+  .kigex-motion-canvas {
+    height: 100dvh;
+    min-height: 100dvh;
+  }
+
+  .site-header {
+    padding-top: max(0.9rem, env(safe-area-inset-top));
+  }
+
   .grid {
     grid-template-columns: repeat(2, minmax(1px, 1fr));
   }
