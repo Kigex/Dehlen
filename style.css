@@ -889,7 +889,7 @@ body.home-page .main {
 }
 
 .research-card-author {
-  font-family: var(--font-button);
+  font-family: var(--font-footer);
   text-transform: uppercase;
   color: var(--color-body);
 }
@@ -1505,6 +1505,7 @@ body.home-page .main {
   }
 
   .header-link[aria-current="page"] {
+    display: none;
     color: var(--color-link);
     background: transparent;
   }
@@ -1638,7 +1639,19 @@ body.home-page .main {
   }
 
   .research-card {
-    min-height: 46rem;
+    min-height: 0;
+    padding: 2.5rem 2.4rem 2.6rem 3rem;
+    grid-template-rows: auto auto auto;
+    gap: 2.2rem;
+    contain-intrinsic-size: 30rem;
+  }
+
+  .research-card-info {
+    align-self: start;
+  }
+
+  .research-card .card-cta {
+    margin-top: 0;
   }
 
   .leader-hero {
