@@ -1,9 +1,10 @@
 (function () {
   const root = document.documentElement;
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-  const frameInterval = 1000 / 200;
-  const qualityScale = 0.48;
-  const maxDpr = 1.35;
+  const idleFrameInterval = 1000 / 120;
+  const scrollFrameInterval = 1000 / 60;
+  const qualityScale = 0.42;
+  const maxDpr = 1.2;
   const motionSpeed = 3.195;
   const baseBlobs = [
     { x: 0.18, y: 0.28, r: 0.34, vx: 0.018, vy: 0.012, color: [0, 88, 210], alpha: 0.34, phase: 0.3 },
@@ -20,9 +21,14 @@
   let width = 0;
   let height = 0;
   let rafId = null;
+  let resizeRaf = null;
   let lastFrame = 0;
   let lastTime = 0;
   let visible = true;
+  let scrolling = false;
+  let scrollTimer = null;
+  let baseGradient = null;
+  let shadeGradient = null;
 
   function random(min, max) {
     return min + Math.random() * (max - min);
@@ -77,6 +83,26 @@
     canvas.height = height;
     canvas.style.width = "100vw";
     canvas.style.height = "100vh";
+    buildPaintCache();
+  }
+
+  function buildPaintCache() {
+    baseGradient = ctx.createLinearGradient(0, 0, width, height);
+    baseGradient.addColorStop(0, "#061426");
+    baseGradient.addColorStop(0.48, "#081a21");
+    baseGradient.addColorStop(1, "#031a16");
+
+    shadeGradient = ctx.createRadialGradient(
+      width * 0.5,
+      height * 0.48,
+      0,
+      width * 0.5,
+      height * 0.48,
+      Math.max(width, height) * 0.72,
+    );
+    shadeGradient.addColorStop(0, "rgba(0, 0, 0, 0)");
+    shadeGradient.addColorStop(0.68, "rgba(0, 0, 0, 0.1)");
+    shadeGradient.addColorStop(1, "rgba(0, 0, 0, 0.48)");
   }
 
   function invisibleMargins(blob) {
@@ -129,25 +155,21 @@
   }
 
   function paint(time) {
-    const base = ctx.createLinearGradient(0, 0, width, height);
     const breathe = 0.9 + Math.sin(time * 0.00022 * motionSpeed) * 0.1;
 
-    base.addColorStop(0, "#061426");
-    base.addColorStop(0.48, "#081a21");
-    base.addColorStop(1, "#031a16");
+    if (!baseGradient || !shadeGradient) {
+      buildPaintCache();
+    }
+
     ctx.globalCompositeOperation = "source-over";
-    ctx.fillStyle = base;
+    ctx.fillStyle = baseGradient;
     ctx.fillRect(0, 0, width, height);
 
     ctx.globalCompositeOperation = "screen";
     blobs.forEach((blob) => drawBlob(blob, time, breathe));
 
-    const shade = ctx.createRadialGradient(width * 0.5, height * 0.48, 0, width * 0.5, height * 0.48, Math.max(width, height) * 0.72);
-    shade.addColorStop(0, "rgba(0, 0, 0, 0)");
-    shade.addColorStop(0.68, "rgba(0, 0, 0, 0.1)");
-    shade.addColorStop(1, "rgba(0, 0, 0, 0.48)");
     ctx.globalCompositeOperation = "source-over";
-    ctx.fillStyle = shade;
+    ctx.fillStyle = shadeGradient;
     ctx.fillRect(0, 0, width, height);
   }
 
@@ -161,7 +183,7 @@
       lastTime = time;
     }
 
-    if (time - lastFrame >= frameInterval) {
+    if (time - lastFrame >= (scrolling ? scrollFrameInterval : idleFrameInterval)) {
       const delta = Math.min(48, time - lastTime) / 1000;
       blobs.forEach((blob) => {
         moveBlob(blob, delta);
@@ -198,12 +220,36 @@
     }
   }
 
-  function initMotion() {
-    startMotion();
-    window.addEventListener("resize", () => {
+  function noteScrollActivity() {
+    scrolling = true;
+
+    if (scrollTimer) {
+      window.clearTimeout(scrollTimer);
+    }
+
+    scrollTimer = window.setTimeout(() => {
+      scrolling = false;
+    }, 140);
+  }
+
+  function requestMotionResize() {
+    if (resizeRaf) {
+      return;
+    }
+
+    resizeRaf = window.requestAnimationFrame(() => {
+      resizeRaf = null;
       resizeCanvas();
       paint(performance.now());
     });
+  }
+
+  function initMotion() {
+    startMotion();
+    window.addEventListener("resize", requestMotionResize);
+    window.addEventListener("scroll", noteScrollActivity, { passive: true });
+    window.addEventListener("wheel", noteScrollActivity, { passive: true });
+    window.addEventListener("touchmove", noteScrollActivity, { passive: true });
     document.addEventListener("visibilitychange", () => {
       visible = document.visibilityState !== "hidden";
 

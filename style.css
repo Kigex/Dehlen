@@ -170,7 +170,6 @@ body {
     radial-gradient(circle at 78% 78%, rgba(0, 96, 218, 0.055), transparent 46rem),
     radial-gradient(circle at 24% 86%, rgba(21, 178, 108, 0.06), transparent 42rem),
     linear-gradient(135deg, #061426 0%, #0a1b22 50%, #031a16 100%);
-  background-attachment: fixed;
   color: var(--color-body);
   font-family: var(--font-body);
   font-size: 1.6rem;
@@ -225,6 +224,7 @@ body::after {
   opacity: 0.92;
   filter: saturate(112%) contrast(104%);
   transform: translateZ(0);
+  contain: strict;
 }
 
 @media (prefers-reduced-motion: reduce) {
