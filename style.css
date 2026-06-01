@@ -363,7 +363,7 @@ body.nav-hidden:not(.nav-open) .site-header {
   align-items: center;
   justify-content: space-between;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   width: 100%;
   max-width: 100%;
   min-height: 4.6rem;
@@ -387,12 +387,15 @@ body.nav-hidden:not(.nav-open) .site-header {
 }
 
 .brand {
-  width: 9.6rem;
+  width: 104px;
+  min-width: 104px;
+  flex: 0 0 104px;
   height: 30px;
   color: var(--color-title);
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  overflow: visible;
 }
 
 .home-page .brand,
@@ -411,6 +414,7 @@ body.nav-hidden:not(.nav-open) .site-header {
   display: inline-grid;
   place-items: center;
   white-space: nowrap;
+  flex: none;
 }
 
 .header-actions,
@@ -419,6 +423,15 @@ body.nav-hidden:not(.nav-open) .site-header {
   align-items: center;
   justify-content: flex-end;
   gap: 1.6rem;
+  min-width: 0;
+}
+
+.header-actions {
+  flex: 1 1 auto;
+}
+
+.header-menu {
+  flex-wrap: nowrap;
 }
 
 .header-link,
@@ -689,29 +702,38 @@ body.home-page .main {
 
 .search-hero,
 .blog-hero {
-  padding-top: 13.2rem;
-  padding-bottom: 20rem;
+  padding-top: 11.2rem;
+  padding-bottom: 12rem;
 }
 
 .search-aside {
-  grid-column: 1 / 4;
+  grid-column: 1 / 5;
   position: relative;
   z-index: 2;
 }
 
 .search-aside-inner {
-  position: sticky;
-  top: 10rem;
+  position: static;
 }
 
 .search-title {
-  margin-bottom: 2.8rem;
+  margin-bottom: 2.2rem;
+}
+
+.page-intro-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 1.45rem;
+  max-width: 62ch;
+  line-height: 1.62;
+}
+
+.page-intro-copy p {
+  margin: 0;
 }
 
 .search-desc {
-  white-space: pre-line;
-  max-width: 58ch;
-  line-height: 1.58;
+  white-space: normal;
 }
 
 .search-feed {
@@ -919,8 +941,8 @@ body.home-page .main {
 }
 
 .leader-hero {
-  padding-top: 9.8rem;
-  padding-bottom: 4rem;
+  padding-top: 11.2rem;
+  padding-bottom: 5.8rem;
 }
 
 .leader-hero-left {
@@ -928,12 +950,11 @@ body.home-page .main {
 }
 
 .leader-hero-title {
-  margin-bottom: 1.6rem;
+  margin-bottom: 2.2rem;
 }
 
 .leader-hero-desc {
-  max-width: 78rem;
-  line-height: 1.58;
+  max-width: 62ch;
 }
 
 .leader-main {
@@ -1600,7 +1621,7 @@ body.home-page .main {
   .search-hero,
   .blog-hero {
     padding-top: 6.3rem;
-    padding-bottom: 10rem;
+    padding-bottom: 8.4rem;
   }
 
   .search-aside,
@@ -1613,7 +1634,13 @@ body.home-page .main {
   }
 
   .search-feed {
-    margin-top: 3.8rem;
+    margin-top: 3.2rem;
+  }
+
+  .page-intro-copy {
+    gap: 1.25rem;
+    max-width: 100%;
+    line-height: 1.58;
   }
 
   .heading.h2 {
