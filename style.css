@@ -325,7 +325,7 @@ img {
   -webkit-backdrop-filter: none;
   backdrop-filter: none;
   opacity: 1;
-  transform: translate3d(0, 0, 0);
+  transform: translate3d(0, var(--nav-shift, 0px), 0);
   transition: transform 0.42s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.26s ease;
   will-change: transform, opacity;
 }
@@ -334,6 +334,11 @@ body.nav-hidden:not(.nav-open) .site-header {
   opacity: 0;
   pointer-events: none;
   transform: translate3d(0, calc(-100% - 1.6rem), 0);
+}
+
+body.nav-scroll-linked .site-header {
+  opacity: var(--nav-opacity, 1);
+  transition: none;
 }
 
 .site-header .container.fluid {
@@ -1310,6 +1315,10 @@ body.home-page .main {
 
   .site-header {
     padding-top: max(0.9rem, env(safe-area-inset-top));
+  }
+
+  body.nav-scroll-linked .site-header {
+    pointer-events: var(--nav-pointer-events, auto);
   }
 
   .grid {

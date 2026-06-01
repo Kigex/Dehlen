@@ -240,6 +240,7 @@
   function initAutoHideNav() {
     const header = document.querySelector(".site-header");
     const menuButton = document.querySelector(".menu-toggle");
+    const mobileNav = window.matchMedia("(max-width: 767px)");
 
     if (!header) {
       return;
@@ -248,7 +249,7 @@
     let ticking = false;
     let isHidden = false;
 
-    function closeMenuForScroll() {
+    function closeMenuForScroll(scheduleUpdate = true) {
       if (!document.body.classList.contains("nav-open")) {
         return;
       }
@@ -257,11 +258,45 @@
       if (menuButton) {
         menuButton.setAttribute("aria-expanded", "false");
       }
-      window.setTimeout(updateNavVisibility, 80);
+
+      if (scheduleUpdate) {
+        window.setTimeout(updateNavVisibility, 80);
+      }
+    }
+
+    function setHeaderOffset(progress) {
+      const hideDistance = header.offsetHeight + 16;
+      const shift = -hideDistance * progress;
+      const opacity = Math.max(0, 1 - progress * 1.12);
+
+      header.style.setProperty("--nav-shift", `${shift.toFixed(2)}px`);
+      header.style.setProperty("--nav-opacity", opacity.toFixed(3));
+      header.style.setProperty("--nav-pointer-events", progress > 0.98 ? "none" : "auto");
     }
 
     function updateNavVisibility() {
       ticking = false;
+
+      if (mobileNav.matches) {
+        const hideDistance = Math.max(84, header.offsetHeight + 36);
+        const progress = Math.min(1, Math.max(0, window.scrollY / hideDistance));
+
+        if (window.scrollY > 2) {
+          closeMenuForScroll(false);
+        }
+
+        document.body.classList.add("nav-scroll-linked");
+        document.body.classList.remove("nav-hidden");
+        isHidden = progress > 0.98;
+        setHeaderOffset(progress);
+        return;
+      }
+
+      document.body.classList.remove("nav-scroll-linked");
+      header.style.removeProperty("--nav-shift");
+      header.style.removeProperty("--nav-opacity");
+      header.style.removeProperty("--nav-pointer-events");
+      isHidden = document.body.classList.contains("nav-hidden");
 
       const shouldHide = window.scrollY > 24;
 
