@@ -439,6 +439,8 @@ body.nav-scroll-linked .site-header {
   position: relative;
   display: inline-grid;
   place-items: center;
+  padding-bottom: 0.08em;
+  margin-bottom: -0.08em;
   white-space: nowrap;
   flex: none;
 }
