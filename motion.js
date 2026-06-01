@@ -4,7 +4,7 @@
   const frameInterval = 1000 / 32;
   const qualityScale = 0.48;
   const maxDpr = 1.35;
-  const motionSpeed = 2.84;
+  const motionSpeed = 4.26;
   const baseBlobs = [
     { x: 0.18, y: 0.28, r: 0.34, vx: 0.018, vy: 0.012, color: [0, 88, 210], alpha: 0.34, phase: 0.3 },
     { x: 0.72, y: 0.28, r: 0.32, vx: -0.016, vy: 0.014, color: [20, 190, 114], alpha: 0.3, phase: 1.9 },
@@ -239,6 +239,7 @@
 
   function initAutoHideNav() {
     const header = document.querySelector(".site-header");
+    const menuButton = document.querySelector(".menu-toggle");
 
     if (!header) {
       return;
@@ -250,15 +251,14 @@
     function updateNavVisibility() {
       ticking = false;
 
-      if (document.body.classList.contains("nav-open")) {
-        if (isHidden) {
-          isHidden = false;
-          document.body.classList.remove("nav-hidden");
-        }
-        return;
-      }
-
       const shouldHide = window.scrollY > 24;
+
+      if (shouldHide && document.body.classList.contains("nav-open")) {
+        document.body.classList.remove("nav-open");
+        if (menuButton) {
+          menuButton.setAttribute("aria-expanded", "false");
+        }
+      }
 
       if (shouldHide === isHidden) {
         return;
