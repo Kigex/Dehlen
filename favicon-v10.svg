@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="kigex-favicon-bg" x1="8" y1="6" x2="58" y2="60" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#071a30" />
+      <stop offset="0.52" stop-color="#101010" />
+      <stop offset="1" stop-color="#04221d" />
+    </linearGradient>
+    <radialGradient id="kigex-favicon-blue" cx="15" cy="10" r="42" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1b8cff" stop-opacity="0.34" />
+      <stop offset="1" stop-color="#1b8cff" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="kigex-favicon-green" cx="52" cy="54" r="39" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#45e56f" stop-opacity="0.32" />
+      <stop offset="1" stop-color="#45e56f" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="kigex-k-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0" stop-color="#1b8cff" />
+      <stop offset="0.5" stop-color="#19c7d2" />
+      <stop offset="1" stop-color="#45e56f" />
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="18" fill="url(#kigex-favicon-bg)" />
+  <rect width="64" height="64" rx="18" fill="url(#kigex-favicon-blue)" />
+  <rect width="64" height="64" rx="18" fill="url(#kigex-favicon-green)" />
+  <path
+    d="M95 0V730H185V323H291L451 550H554L369 288L557 0H452L292 245H185V0Z"
+    fill="url(#kigex-k-gradient)"
+    transform="translate(11.18 55.82) scale(0.06389 -0.06389)"
+  />
+</svg>
