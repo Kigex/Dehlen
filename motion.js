@@ -1,7 +1,7 @@
 (function () {
   const root = document.documentElement;
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-  const frameInterval = 1000 / 32;
+  const frameInterval = 1000 / 200;
   const qualityScale = 0.48;
   const maxDpr = 1.35;
   const motionSpeed = 3.195;
