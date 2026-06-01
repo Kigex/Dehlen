@@ -248,16 +248,25 @@
     let ticking = false;
     let isHidden = false;
 
+    function closeMenuForScroll() {
+      if (!document.body.classList.contains("nav-open")) {
+        return;
+      }
+
+      document.body.classList.remove("nav-open");
+      if (menuButton) {
+        menuButton.setAttribute("aria-expanded", "false");
+      }
+      window.setTimeout(updateNavVisibility, 80);
+    }
+
     function updateNavVisibility() {
       ticking = false;
 
       const shouldHide = window.scrollY > 24;
 
-      if (shouldHide && document.body.classList.contains("nav-open")) {
-        document.body.classList.remove("nav-open");
-        if (menuButton) {
-          menuButton.setAttribute("aria-expanded", "false");
-        }
+      if (shouldHide) {
+        closeMenuForScroll();
       }
 
       if (shouldHide === isHidden) {
@@ -279,6 +288,8 @@
 
     updateNavVisibility();
     window.addEventListener("scroll", requestNavVisibilityUpdate, { passive: true });
+    window.addEventListener("wheel", closeMenuForScroll, { passive: true });
+    window.addEventListener("touchmove", closeMenuForScroll, { passive: true });
     window.addEventListener("resize", requestNavVisibilityUpdate);
   }
 
