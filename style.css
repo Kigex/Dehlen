@@ -51,7 +51,6 @@
   --color-faint: rgba(245, 245, 247, 0.08);
   --color-border: rgba(245, 245, 247, 0.16);
   --color-link: #36ddb0;
-  --color-link-hover: #1f5fd0;
   --color-dark: #101010;
   --accent-gradient: linear-gradient(92deg, #1b8cff 0%, #19c7d2 48%, #45e56f 100%);
   --surface-gradient:
@@ -314,11 +313,11 @@ body.nav-hidden:not(.nav-open) .site-header {
 
 .site-header .header-link:hover,
 .site-header .header-link:active {
-  color: var(--color-link-hover);
+  color: var(--color-link);
   border-color: transparent;
   background: transparent;
   box-shadow: none;
-  opacity: 1;
+  opacity: 0.78;
 }
 
 .site-header .header-link[aria-current="page"] {
@@ -330,7 +329,8 @@ body.nav-hidden:not(.nav-open) .site-header {
 
 .site-header .header-link[aria-current="page"]:hover,
 .site-header .header-link[aria-current="page"]:active {
-  color: var(--color-link-hover);
+  color: var(--color-link);
+  opacity: 0.78;
 }
 
 .site-header .menu-toggle {
@@ -454,11 +454,11 @@ body.nav-hidden:not(.nav-open) .site-header {
 
 .header-link:hover,
 .header-link:active {
-  color: var(--color-link-hover);
+  color: var(--color-link);
   border-color: transparent;
   background: transparent;
   box-shadow: none;
-  opacity: 1;
+  opacity: 0.78;
 }
 
 .header-link[aria-current="page"] {
@@ -470,15 +470,17 @@ body.nav-hidden:not(.nav-open) .site-header {
 
 .header-link[aria-current="page"]:hover,
 .header-link[aria-current="page"]:active {
-  color: var(--color-link-hover);
+  color: var(--color-link);
+  opacity: 0.78;
 }
 
 .footer-link:hover,
 .footer-link:active {
-  color: var(--color-link-hover);
+  color: var(--color-title);
   border-color: transparent;
   background: transparent;
   box-shadow: none;
+  opacity: 0.78;
 }
 
 .header-btn {
@@ -492,10 +494,10 @@ body.nav-hidden:not(.nav-open) .site-header {
 
 .header-btn:hover,
 .header-btn:active {
-  color: var(--color-link-hover);
-  border-color: var(--button-border);
-  background: var(--button-surface);
-  box-shadow: none;
+  color: var(--color-link);
+  border-color: var(--button-border-hover);
+  background: var(--button-surface-hover);
+  box-shadow: var(--button-hover-shadow);
 }
 
 .menu-toggle {
@@ -812,10 +814,10 @@ body.home-page .main {
 
 .card-cta-link:hover,
 .card-cta-link:active {
-  color: var(--color-link-hover);
-  border-color: var(--button-border);
-  background: var(--button-surface);
-  box-shadow: none;
+  color: var(--color-link);
+  border-color: var(--button-border-hover);
+  background: var(--button-surface-hover);
+  box-shadow: var(--button-hover-shadow);
 }
 
 .card-cta-link:active,
@@ -1010,15 +1012,15 @@ body.home-page .main {
 
 .leader-card-btn:hover,
 .leader-card-btn:active {
-  color: var(--color-link-hover);
-  border-color: var(--button-border);
-  background: var(--button-surface);
-  box-shadow: none;
+  color: var(--color-link);
+  border-color: var(--button-border-hover);
+  background: var(--button-surface-hover);
+  box-shadow: var(--button-hover-shadow);
 }
 
 .leader-card.is-dark .leader-card-btn:hover,
 .leader-card.is-dark .leader-card-btn:active {
-  color: var(--color-link-hover);
+  color: var(--color-link);
   background: var(--panel-gradient-soft);
 }
 
@@ -1286,10 +1288,10 @@ body.home-page .main {
 
 .footer-link:hover,
 .footer-link:active {
-  color: var(--color-link-hover);
+  color: var(--color-title);
   background: transparent;
   box-shadow: none;
-  opacity: 1;
+  opacity: 0.78;
 }
 
 .site-header .header-link:hover,
@@ -1466,15 +1468,19 @@ body.home-page .main {
     margin-left: 0;
     padding: 0.95rem 0.85rem 0.85rem;
     color: var(--color-link);
+    font-family: var(--font-footer);
     font-size: 1.4rem;
+    line-height: 1.4;
+    text-transform: uppercase;
   }
 
   .header-link:hover,
   .header-link:active {
-    color: var(--color-link-hover);
+    color: var(--color-link);
     border-color: transparent;
     background: transparent;
     box-shadow: none;
+    opacity: 0.78;
   }
 
   .header-link[aria-current="page"] {
@@ -1484,7 +1490,8 @@ body.home-page .main {
 
   .header-link[aria-current="page"]:hover,
   .header-link[aria-current="page"]:active {
-    color: var(--color-link-hover);
+    color: var(--color-link);
+    opacity: 0.78;
   }
 
   .header-btn {
@@ -1527,11 +1534,13 @@ body.home-page .main {
 
   .menu-toggle:hover,
   .menu-toggle:active {
-    color: var(--color-link-hover);
+    color: var(--color-link);
+    opacity: 0.78;
   }
 
   .menu-toggle span {
     grid-area: 1 / 1;
+    font: inherit;
     transition: opacity 0.35s ease;
   }
 
