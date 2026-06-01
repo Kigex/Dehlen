@@ -328,6 +328,11 @@ body.nav-hidden:not(.nav-open) .site-header {
   box-shadow: none;
 }
 
+.site-header .header-link[aria-current="page"]:hover,
+.site-header .header-link[aria-current="page"]:active {
+  color: var(--color-link-hover);
+}
+
 .site-header .menu-toggle {
   color: var(--color-link);
 }
@@ -461,6 +466,11 @@ body.nav-hidden:not(.nav-open) .site-header {
   border-color: transparent;
   background: transparent;
   box-shadow: none;
+}
+
+.header-link[aria-current="page"]:hover,
+.header-link[aria-current="page"]:active {
+  color: var(--color-link-hover);
 }
 
 .footer-link:hover,
@@ -1463,6 +1473,11 @@ body.home-page .main {
   .header-link[aria-current="page"] {
     color: var(--color-link);
     background: transparent;
+  }
+
+  .header-link[aria-current="page"]:hover,
+  .header-link[aria-current="page"]:active {
+    color: var(--color-link-hover);
   }
 
   .header-btn {
