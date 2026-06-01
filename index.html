@@ -16,6 +16,11 @@
     <meta name="theme-color" content="#02090f" />
     <meta name="color-scheme" content="dark" />
     <link rel="canonical" href="https://kigex.com/" />
+    <script>
+      if (window.location.pathname.endsWith("/index.html")) {
+        window.history.replaceState(null, "", "/" + window.location.search + window.location.hash);
+      }
+    </script>
     <meta property="og:site_name" content="Kigex" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://kigex.com/" />
@@ -99,8 +104,8 @@
 
           <div class="header-actions" id="site-menu">
             <nav class="header-menu" aria-label="Primary navigation">
-              <a class="header-link" href="leaderboards.html">Leaderboards</a>
-              <a class="header-link" href="research.html">Research</a>
+              <a class="header-link" href="leaderboards/">Leaderboards</a>
+              <a class="header-link" href="research/">Research</a>
             </nav>
           </div>
 

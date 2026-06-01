@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Leaderboards | Kigex AI</title>
+    <meta
+      name="description"
+      content="Kigex leaderboards for model evaluation across rigorous human-graded benchmarks."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Kigex" />
+    <meta name="theme-color" content="#02090f" />
+    <meta name="color-scheme" content="dark" />
+    <link rel="canonical" href="https://kigex.com/leaderboards/" />
+    <meta property="og:site_name" content="Kigex" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://kigex.com/leaderboards/" />
+    <meta property="og:title" content="Leaderboards | Kigex" />
+    <meta
+      property="og:description"
+      content="Human-graded Kigex leaderboards for rigorous reasoning, domain mastery, and usefulness under pressure."
+    />
+    <meta property="og:image" content="https://kigex.com/favicon-v18.png" />
+    <meta property="og:image:secure_url" content="https://kigex.com/favicon-v18.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="192" />
+    <meta property="og:image:height" content="192" />
+    <meta property="og:image:alt" content="Kigex logo" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Leaderboards | Kigex" />
+    <meta
+      name="twitter:description"
+      content="Human-graded Kigex leaderboards for rigorous reasoning, domain mastery, and usefulness under pressure."
+    />
+    <meta name="twitter:image" content="https://kigex.com/favicon-v18.png" />
+    <meta name="twitter:image:alt" content="Kigex logo" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://kigex.com/#organization",
+            "name": "Kigex",
+            "url": "https://kigex.com/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://kigex.com/favicon-v18.png",
+              "width": 192,
+              "height": 192
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://kigex.com/#website",
+            "url": "https://kigex.com/",
+            "name": "Kigex",
+            "publisher": {
+              "@id": "https://kigex.com/#organization"
+            },
+            "inLanguage": "en"
+          },
+          {
+            "@type": "CollectionPage",
+            "@id": "https://kigex.com/leaderboards/#webpage",
+            "url": "https://kigex.com/leaderboards/",
+            "name": "Kigex Leaderboards",
+            "description": "Human-graded leaderboards for rigorous reasoning, domain mastery, and usefulness under pressure.",
+            "isPartOf": {
+              "@id": "https://kigex.com/#website"
+            },
+            "mainEntity": {
+              "@id": "https://kigex.com/leaderboards/#benchmarks"
+            },
+            "inLanguage": "en"
+          },
+          {
+            "@type": "ItemList",
+            "@id": "https://kigex.com/leaderboards/#benchmarks",
+            "name": "Kigex benchmark categories",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Antidote: Everyday Edition",
+                "description": "Real prompts, real stakes, graded by experts for citation quality, code execution, and usefulness."
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "EnterpriseBench Corecraft",
+                "description": "Multi-step enterprise workflows across customers, tickets, policies, dashboards, and tools."
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Riemann-Bench",
+                "description": "Expert-curated mathematical work that tests proof strategy, definitions, abstraction, and coherence."
+              },
+              {
+                "@type": "ListItem",
+                "position": 4,
+                "name": "Multimodal RewardBench",
+                "description": "Reward models judge image edits, visual reasoning, interleaved outputs, and preference pairs."
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="preconnect" href="https://cdn.prod.website-files.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" href="../favicon-v18.png" type="image/png" sizes="192x192" />
+    <link rel="shortcut icon" href="../favicon-v18.png" type="image/png" />
+    <link rel="apple-touch-icon" href="../favicon-v18.png" />
+    <link rel="mask-icon" href="../safari-pinned-tab.svg" color="#3b9dff" />
+    <link rel="icon" href="../favicon-v18.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="../style.css?v=20260601-seo-cleanup" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container fluid">
+        <div class="header-inner">
+          <a class="brand" href="../" aria-label="Kigex home">
+            <span class="brand-text">kigex</span>
+          </a>
+
+          <div class="header-actions" id="site-menu">
+            <nav class="header-menu" aria-label="Primary navigation">
+              <a class="header-link" href="../leaderboards/" aria-current="page">Leaderboards</a>
+              <a class="header-link" href="../research/">Research</a>
+            </nav>
+          </div>
+
+          <button
+            class="menu-toggle"
+            type="button"
+            aria-controls="site-menu"
+            aria-expanded="false"
+          >
+            <span>Menu</span>
+            <span>Close</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="leader-hero" aria-label="Kigex leaderboards">
+        <div class="container grid">
+          <div class="leader-hero-left">
+            <div class="leader-hero-title">
+              <h1 class="heading h2 word-lift-title">
+                <span class="hero-line">
+                  <span class="hero-word">Leaderboards</span>
+                </span>
+              </h1>
+            </div>
+            <div class="txt fs-16 page-intro-copy leader-hero-desc">
+              <p>
+                Greatness is not accidental. How we measure it should not be
+                either. If we want AGI that builds enterprises, writes reliable
+                code, and reasons through the world, we need evaluations with real
+                stakes and expert judgment.
+              </p>
+              <p>
+                This is our ranking of models by rigorous reasoning, domain
+                mastery, and usefulness under pressure.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="leader-main" aria-label="Benchmark categories">
+        <div class="container grid leader-main-grid">
+          <article class="leader-card is-dark">
+            <div class="leader-label fs-12">Antidote / Everyday</div>
+            <div>
+              <h2 class="heading h4 leader-card-title">
+                Antidote: Everyday Edition
+              </h2>
+              <p class="txt fs-16 leader-card-desc">
+                Real prompts, real stakes, graded by experts who check every
+                citation, run every line of code, and read for actual usefulness.
+              </p>
+            </div>
+            <button class="leader-card-btn fs-12" type="button">
+              <svg class="arrow" viewBox="0 0 12 12" aria-hidden="true">
+                <path
+                  d="M3 9L9 3M9 3H4M9 3V8"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.3"
+                />
+              </svg>
+              Methodology
+            </button>
+            <div class="leader-table">
+              <div class="leader-table-head fs-12">
+                <span>Rank</span>
+                <span>Model</span>
+                <span>elo score (95% ci)</span>
+              </div>
+              <div class="leader-list">
+                <div class="leader-row">
+                  <span class="leader-rank"></span>
+                  <span class="txt fs-14 fw-med">Orion 3.1 Pro</span>
+                  <span class="leader-score fs-12">1099 <span>(1087-1110)</span></span>
+                </div>
+                <div class="leader-row">
+                  <span class="leader-rank"></span>
+                  <span class="txt fs-14 fw-med">Helios 3.5 Flash</span>
+                  <span class="leader-score fs-12">1082 <span>(1071-1095)</span></span>
+                </div>
+                <div class="leader-row">
+                  <span class="leader-rank"></span>
+                  <span class="txt fs-14 fw-med">Atlas Opus 4.6</span>
+                  <span class="leader-score fs-12">1046 <span>(1036-1058)</span></span>
+                </div>
+                <div class="leader-row">
+                  <span class="leader-rank"></span>
+                  <span class="txt fs-14 fw-med">Nova Reasoner Max</span>
+                  <span class="leader-score fs-12">1045 <span>(1032-1057)</span></span>
+                </div>
+                <div class="leader-row">
+                  <span class="leader-rank"></span>
+                  <span class="txt fs-14 fw-med">Kite 5.5</span>
+                  <span class="leader-score fs-12">1022 <span>(1011-1034)</span></span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="leader-card is-dark">
+            <div class="leader-label fs-12">Corecraft / Enterprise</div>
+            <div>
+              <h2 class="heading h4 leader-card-title">
+                EnterpriseBench Corecraft
+              </h2>
+              <p class="txt fs-16 leader-card-desc">
+                Multi-step enterprise workflows across customers, tickets,
+                policies, dashboards, and tools. Agents must finish the job, not
+                just sound plausible.
+              </p>
+            </div>
+            <button class="leader-card-btn fs-12" type="button">
+              <svg class="arrow" viewBox="0 0 12 12" aria-hidden="true">
+                <path
+                  d="M3 9L9 3M9 3H4M9 3V8"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.3"
+                />
+              </svg>
+              Read Paper
+            </button>
+            <div class="leader-table">
+              <div class="leader-table-head fs-12">
+                <span>Rank</span>
+                <span>Model</span>
+                <span>pass rate</span>
+              </div>
+              <div class="leader-list">
+                <div class="leader-row">
+                  <span class="leader-rank"></span>
+                  <span class="txt fs-14 fw-med">Atlas Opus 4.6</span>
+                  <span class="leader-score fs-12">36.8%</span>
+                </div>
+                <div class="leader-row">
+                  <span class="leader-rank"></span>
+                  <span class="txt fs-14 fw-med">Orion 3.1 Pro</span>
+                  <span class="leader-score fs-12">34.2%</span>
+                </div>
+                <div class="leader-row">
+                  <span class="leader-rank"></span>
+                  <span class="txt fs-14 fw-med">Kite 5.5</span>
+                  <span class="leader-score fs-12">31.6%</span>
+                </div>
+                <div class="leader-row">
+                  <span class="leader-rank"></span>
+                  <span class="txt fs-14 fw-med">Helios 3.5 Flash</span>
+                  <span class="leader-score fs-12">29.4%</span>
+                </div>
+                <div class="leader-row">
+                  <span class="leader-rank"></span>
+                  <span class="txt fs-14 fw-med">Vector Mini</span>
+                  <span class="leader-score fs-12">23.9%</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="leader-card">
+            <div class="leader-label fs-12">Research / Mathematics</div>
+            <div>
+              <h2 class="heading h4 leader-card-title">Riemann-Bench</h2>
+              <p class="txt fs-16 leader-card-desc">
+                Expert-curated mathematical work that tests proof strategy,
+                definitions, abstraction, and the ability to stay coherent over
+                long derivations.
+              </p>
+            </div>
+            <button class="leader-card-btn fs-12" type="button">
+              <svg class="arrow" viewBox="0 0 12 12" aria-hidden="true">
+                <path
+                  d="M3 9L9 3M9 3H4M9 3V8"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.3"
+                />
+              </svg>
+              View On Arxiv
+            </button>
+            <div class="leader-table">
+              <div class="leader-table-head fs-12">
+                <span>Rank</span>
+                <span>Model</span>
+                <span>score</span>
+              </div>
+              <div class="leader-list">
+                <div class="leader-row">
+                  <span class="leader-rank"></span>
+                  <span class="txt fs-14 fw-med">Orion Research</span>
+                  <span class="leader-score fs-12">74.1</span>
+                </div>
+                <div class="leader-row">
+                  <span class="leader-rank"></span>
+                  <span class="txt fs-14 fw-med">Atlas Opus 4.6</span>
+                  <span class="leader-score fs-12">71.8</span>
+                </div>
+                <div class="leader-row">
+                  <span class="leader-rank"></span>
+                  <span class="txt fs-14 fw-med">Kite 5.5</span>
+                  <span class="leader-score fs-12">66.4</span>
+                </div>
+                <div class="leader-row">
+                  <span class="leader-rank"></span>
+                  <span class="txt fs-14 fw-med">Helios Flash</span>
+                  <span class="leader-score fs-12">58.7</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="leader-card">
+            <div class="leader-label fs-12">Multimodal / Reward</div>
+            <div>
+              <h2 class="heading h4 leader-card-title">
+                Multimodal RewardBench
+              </h2>
+              <p class="txt fs-16 leader-card-desc">
+                Reward models judge image edits, visual reasoning, interleaved
+                text-image outputs, and preference pairs with expert agreement.
+              </p>
+            </div>
+            <button class="leader-card-btn fs-12" type="button">
+              <svg class="arrow" viewBox="0 0 12 12" aria-hidden="true">
+                <path
+                  d="M3 9L9 3M9 3H4M9 3V8"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.3"
+                />
+              </svg>
+              Details
+            </button>
+            <div class="leader-table">
+              <div class="leader-table-head fs-12">
+                <span>Rank</span>
+                <span>Judge</span>
+                <span>accuracy</span>
+              </div>
+              <div class="leader-list">
+                <div class="leader-row">
+                  <span class="leader-rank"></span>
+                  <span class="txt fs-14 fw-med">Human Experts</span>
+                  <span class="leader-score fs-12">91.4%</span>
+                </div>
+                <div class="leader-row">
+                  <span class="leader-rank"></span>
+                  <span class="txt fs-14 fw-med">Orion 3.1 Pro</span>
+                  <span class="leader-score fs-12">79.5%</span>
+                </div>
+                <div class="leader-row">
+                  <span class="leader-rank"></span>
+                  <span class="txt fs-14 fw-med">Atlas Opus 4.6</span>
+                  <span class="leader-score fs-12">75.2%</span>
+                </div>
+                <div class="leader-row">
+                  <span class="leader-rank"></span>
+                  <span class="txt fs-14 fw-med">OpenJudge 32B</span>
+                  <span class="leader-score fs-12">64.7%</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <div class="comparison-card">
+            <div class="comparison-title">Human Judgment Score</div>
+            <div class="bar-list">
+              <div class="bar-row">
+                <div class="bar-track">
+                  <div class="bar-fill" style="width: 91%">
+                    <span class="bar-label fs-14 fw-med">Orion 3.1 Pro</span>
+                    <span class="bar-score fs-12">91.8</span>
+                  </div>
+                </div>
+              </div>
+              <div class="bar-row">
+                <div class="bar-track">
+                  <div class="bar-fill" style="width: 88%">
+                    <span class="bar-label fs-14 fw-med">Atlas Opus 4.6</span>
+                    <span class="bar-score fs-12">88.9</span>
+                  </div>
+                </div>
+              </div>
+              <div class="bar-row">
+                <div class="bar-track">
+                  <div class="bar-fill" style="width: 86%">
+                    <span class="bar-label fs-14 fw-med">Helios Flash</span>
+                    <span class="bar-score fs-12">86.2</span>
+                  </div>
+                </div>
+              </div>
+              <div class="bar-row">
+                <div class="bar-track">
+                  <div class="bar-fill" style="width: 83%">
+                    <span class="bar-label fs-14 fw-med">Kite 5.5</span>
+                    <span class="bar-score fs-12">83.4</span>
+                  </div>
+                </div>
+              </div>
+              <div class="bar-row">
+                <div class="bar-track">
+                  <div class="bar-fill" style="width: 76%">
+                    <span class="bar-label fs-14 fw-med">Vector Mini</span>
+                    <span class="bar-score fs-12">76.1</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-bot">
+        <div class="container fluid">
+          <div class="footer-bot-inner">
+            <div class="footer-copyright hidden-mobile">&copy; 2026 Kigex Dehlen Thavarajah</div>
+            <div class="footer-menus-social">
+              <div class="footer-menu-legal">
+                <button class="footer-link" type="button">Cookie Policy</button>
+                <div class="footer-menu-divider" aria-hidden="true"></div>
+                <button class="footer-link" type="button">Cookie Settings</button>
+                <div class="footer-menu-divider" aria-hidden="true"></div>
+                <button class="footer-link" type="button">Privacy Policy</button>
+                <div class="footer-menu-divider" aria-hidden="true"></div>
+                <button class="footer-link" type="button">Terms of Service</button>
+              </div>
+            </div>
+            <div class="footer-copyright only-mobile">&copy; 2026 Kigex Dehlen Thavarajah</div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../motion.js?v=20260601-title-lift" defer></script>
+  </body>
+</html>
