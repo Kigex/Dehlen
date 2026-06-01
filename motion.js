@@ -4,7 +4,7 @@
   const frameInterval = 1000 / 32;
   const qualityScale = 0.48;
   const maxDpr = 1.35;
-  const motionSpeed = 4.26;
+  const motionSpeed = 3.195;
   const baseBlobs = [
     { x: 0.18, y: 0.28, r: 0.34, vx: 0.018, vy: 0.012, color: [0, 88, 210], alpha: 0.34, phase: 0.3 },
     { x: 0.72, y: 0.28, r: 0.32, vx: -0.016, vy: 0.014, color: [20, 190, 114], alpha: 0.3, phase: 1.9 },
