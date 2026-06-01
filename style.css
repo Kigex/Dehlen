@@ -38,12 +38,36 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Geist Sans";
+  src: url("fonts/Geist-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Geist Sans";
+  src: url("fonts/Geist-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Geist Sans";
+  src: url("fonts/Geist-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
-  --font-heading: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-body: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-heading: "Helvetica Neue", "Geist Sans", Helvetica, Arial, sans-serif;
+  --font-body: "Helvetica Neue", "Geist Sans", Helvetica, Arial, sans-serif;
   --font-button: "Jetbrains Mono", monospace;
   --font-footer: "Geist Mono", "Jetbrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
-  --font-model: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-model: "Helvetica Neue", "Geist Sans", Helvetica, Arial, sans-serif;
   --color-title: #f5f5f7;
   --color-body: rgba(245, 245, 247, 0.88);
   --color-subtitle: rgba(245, 245, 247, 0.58);
@@ -623,6 +647,8 @@ body.home-page .main {
 .hero-word {
   display: inline-block;
   color: #36ddb0;
+  padding-bottom: 0.07em;
+  margin-bottom: -0.07em;
   background: linear-gradient(92deg, #1b8cff 0%, #19c7d2 48%, #45e56f 100%);
   background-size: var(--hero-line-width, 100%) 100%;
   background-position: var(--hero-word-x, 0px) 50%;
