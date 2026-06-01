@@ -585,6 +585,11 @@ body.home-page .main {
   text-wrap: normal;
 }
 
+.word-lift-title {
+  cursor: default;
+  text-wrap: normal;
+}
+
 .hero-line {
   display: block;
   white-space: nowrap;

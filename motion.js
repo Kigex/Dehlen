@@ -294,10 +294,11 @@
   }
 
   function initHeroWordLift() {
-    const headline = document.querySelector(".home-hero .heading.h2");
-    const words = Array.from(document.querySelectorAll(".hero-word"));
+    const headlines = Array.from(
+      document.querySelectorAll(".home-hero .heading.h2, .word-lift-title"),
+    );
 
-    if (!headline || !words.length) {
+    if (!headlines.length) {
       return;
     }
 
@@ -307,38 +308,46 @@
     function syncGradientLines() {
       gradientFrame = 0;
 
-      const headlineRect = headline.getBoundingClientRect();
-      const lines = [];
+      headlines.forEach((headline) => {
+        const words = Array.from(headline.querySelectorAll(".hero-word"));
 
-      words.forEach((word) => {
-        const rect = word.getBoundingClientRect();
-        let line = lines.find((entry) => Math.abs(entry.top - rect.top) < 4);
-
-        if (!line) {
-          line = {
-            top: rect.top,
-            left: rect.left,
-            right: rect.right,
-            words: [],
-          };
-          lines.push(line);
+        if (!words.length) {
+          return;
         }
 
-        line.left = Math.min(line.left, rect.left);
-        line.right = Math.max(line.right, rect.right);
-        line.words.push({ word, rect });
-      });
+        const headlineRect = headline.getBoundingClientRect();
+        const lines = [];
 
-      lines.forEach((line, index) => {
-        const lineWidth = Math.max(1, line.right - line.left);
-        const isShortFinalLine = index === lines.length - 1 && line.words.length === 1;
-        const gradientWidth = isShortFinalLine
-          ? Math.max(lineWidth, headlineRect.width)
-          : lineWidth;
+        words.forEach((word) => {
+          const rect = word.getBoundingClientRect();
+          let line = lines.find((entry) => Math.abs(entry.top - rect.top) < 4);
 
-        line.words.forEach(({ word, rect }) => {
-          word.style.setProperty("--hero-line-width", `${gradientWidth}px`);
-          word.style.setProperty("--hero-word-x", `${line.left - rect.left}px`);
+          if (!line) {
+            line = {
+              top: rect.top,
+              left: rect.left,
+              right: rect.right,
+              words: [],
+            };
+            lines.push(line);
+          }
+
+          line.left = Math.min(line.left, rect.left);
+          line.right = Math.max(line.right, rect.right);
+          line.words.push({ word, rect });
+        });
+
+        lines.forEach((line, index) => {
+          const lineWidth = Math.max(1, line.right - line.left);
+          const isShortFinalLine = index === lines.length - 1 && line.words.length === 1;
+          const gradientWidth = isShortFinalLine
+            ? Math.max(lineWidth, headlineRect.width)
+            : lineWidth;
+
+          line.words.forEach(({ word, rect }) => {
+            word.style.setProperty("--hero-line-width", `${gradientWidth}px`);
+            word.style.setProperty("--hero-word-x", `${line.left - rect.left}px`);
+          });
         });
       });
     }
@@ -367,31 +376,35 @@
       }
     }
 
-    words.forEach((word) => {
-      word.addEventListener("pointerenter", () => {
-        setActiveWord(word);
+    headlines.forEach((headline) => {
+      const words = Array.from(headline.querySelectorAll(".hero-word"));
+
+      words.forEach((word) => {
+        word.addEventListener("pointerenter", () => {
+          setActiveWord(word);
+        });
+        word.addEventListener("pointerleave", () => {
+          setActiveWord(null);
+        });
+        word.addEventListener("mouseenter", () => {
+          setActiveWord(word);
+        });
+        word.addEventListener("mouseleave", () => {
+          setActiveWord(null);
+        });
+        word.addEventListener("touchstart", () => {
+          setActiveWord(word);
+          window.setTimeout(() => setActiveWord(null), 650);
+        }, { passive: true });
       });
-      word.addEventListener("pointerleave", () => {
+
+      headline.addEventListener("pointerleave", () => {
         setActiveWord(null);
       });
-      word.addEventListener("mouseenter", () => {
-        setActiveWord(word);
-      });
-      word.addEventListener("mouseleave", () => {
+
+      headline.addEventListener("mouseleave", () => {
         setActiveWord(null);
       });
-      word.addEventListener("touchstart", () => {
-        setActiveWord(word);
-        window.setTimeout(() => setActiveWord(null), 650);
-      }, { passive: true });
-    });
-
-    headline.addEventListener("pointerleave", () => {
-      setActiveWord(null);
-    });
-
-    headline.addEventListener("mouseleave", () => {
-      setActiveWord(null);
     });
 
     syncGradientLines();
