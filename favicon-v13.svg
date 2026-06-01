@@ -21,9 +21,9 @@
       <stop offset="1" stop-color="#02090f" stop-opacity="0" />
     </radialGradient>
     <linearGradient id="kigex-k-gradient" x1="8" y1="10" x2="56" y2="56" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#2f93ff" />
-      <stop offset="0.5" stop-color="#19c7d2" />
-      <stop offset="1" stop-color="#45e56f" />
+      <stop offset="0" stop-color="#3b9dff" />
+      <stop offset="0.54" stop-color="#1fb7d1" />
+      <stop offset="1" stop-color="#22c7af" />
     </linearGradient>
   </defs>
   <rect width="64" height="64" rx="18" fill="url(#kigex-favicon-bg)" />

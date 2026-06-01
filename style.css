@@ -1491,6 +1491,20 @@ body.home-page .main {
     gap: 1.6rem;
   }
 
+  .home-page .header-actions {
+    min-height: 7.2rem;
+    align-items: flex-end;
+    padding-top: 0.85rem;
+    padding-bottom: 0.85rem;
+    border-radius: 2.2rem;
+  }
+
+  .home-page .header-menu {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.2rem;
+  }
+
   .header-link {
     justify-content: flex-end;
     min-height: 2.7rem;
